@@ -4,10 +4,12 @@ defmodule Calc do
     |> String.trim()
     |> eval()
     |> IO.puts()
+
     main()
   end
 
   def eval(expr) do
-    expr
+    Lexer.lex(expr)
+    |> Parser.parse()
   end
 end

@@ -1,5 +1,5 @@
 defmodule Lexer do
-    def tokenize(expr) do
+    def lex(expr) do
         chars = String.split(expr, "", trim: true)
         tokenize(chars, [], [])
     end
@@ -26,6 +26,7 @@ defmodule Lexer do
 
         Enum.reverse(ops) ++ out
         |> Enum.reverse()
+        # Output is in reverse-polish notation
         #IO.puts("Out: #{inspect(out)}")
     end
 
