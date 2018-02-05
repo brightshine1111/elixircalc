@@ -1,18 +1,13 @@
 defmodule Calc do
-  @moduledoc """
-  Documentation for Calc.
-  """
+  def main do
+    IO.gets("> ")
+    |> String.trim()
+    |> eval()
+    |> IO.puts()
+    main()
+  end
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Calc.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def eval(expr) do
+    expr
   end
 end
