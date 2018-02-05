@@ -1,4 +1,7 @@
 defmodule Token do
+    # Much inspiration for this module is from:
+    # https://github.com/fabrik42/writing_an_interpreter_in_elixir/blob/master/lib/monkey/token.ex
+    
     @enforce_keys [:type]
     defstruct [:type, :val, :prec]
 
