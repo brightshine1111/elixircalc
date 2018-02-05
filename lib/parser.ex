@@ -3,6 +3,8 @@ defmodule Parser do
         eval(tokens, [])
     end
     
+    # The algorithm for evaluating this came from RPN's wikipedia article:
+    # https://en.wikipedia.org/wiki/Reverse_Polish_notation#Postfix_evaluation_algorithm
     defp eval([token | rest], stack) do
         stack =
             case token.type do
